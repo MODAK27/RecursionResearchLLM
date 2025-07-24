@@ -1,0 +1,16 @@
+# Ignore macOS system files
+.DS_Store
+
+# Ignore Python bytecode
+__pycache__/
+*.py[cod]
+
+# Ignore PyCharm project files
+.idea/
+
+## Ignore log, cache, and output files (optional, based on your list)
+#*.log
+#*.out
+#*.txt
+#output*
+#results

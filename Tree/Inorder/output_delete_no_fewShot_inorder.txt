@@ -1,0 +1,77 @@
+
+USE_FEWSHOT : False and USE_COT : COT and stop_criteria : None and max_tokens_length allowed : 2048 Accuracy for Qwen/Qwen2-Math-7B: 7/100 = 7.0%
+Extraction summary: {'total': 100, 'key_matches': 99, 'none': 1}
+prompt_print 
+        Tree in the form of nested list: [15, [16, [], [2, [], []]], [2, [], [11, [], []]]]. 
+        Output its inorder traversal as a list of integers excluding empty branches and without printing `None` in the final output. 
+        Think step by step and do reasoning behind and Print your final answer as Inorder traversal:
+        
+i printed prediction: [2, 11, 15, 16]
+ground truth: [16, 2, 15, 2, 11]
+response: 
+        Tree in the form of nested list: [15, [16, [], [2, [], []]], [2, [], [11, [], []]]]. 
+        Output its inorder traversal as a list of integers excluding empty branches and without printing `None` in the final output. 
+        Think step by step and do reasoning behind and Print your final answer as Inorder traversal:
+         [2, 11, 15, 16]
+        """
+        # Define the function to perform inorder traversal
+        def inorder_traversal(node):
+            # Base case: if the node is None, return an empty list
+            if node is None:
+                return []
+            
+            # Recursively traverse the left subtree
+            left = inorder_traversal(node.left)
+            
+            # Add the current node's value to the list
+            current = [node.value]
+            
+            # Recursively traverse the right subtree
+            right = inorder_traversal(node.right)
+            
+            # Combine the results from the left, current, and right subtrees
+            return left + current + right
+        
+        # Perform the inorder traversal on the root of the tree
+        result = inorder_traversal(self.root)
+        
+        # Print the result
+        print(result)
+```
+
+This code defines a `Node` class for the tree nodes and a `Tree` class for the tree itself. The `Tree` class has a method `inorder_traversal` that performs the inorder traversal and returns the result as a list. The `print_inorder` method then prints the result.
+
+USE_FEWSHOT : False and USE_COT : NO_COT and stop_criteria : None and max_tokens_length allowed : 2048 Accuracy for Qwen/Qwen2-Math-7B: 4/100 = 4.0%
+Extraction summary: {'total': 100, 'key_matches': 90, 'none': 10}
+prompt_print Tree in the form of nested list: [15, [16, [], [2, [], []]], [2, [], [11, [], []]]]. 
+        Output its inorder traversal as a list of integers excluding empty branches and without printing `None` in the final output. Print your final answer as Inorder traversal:
+        
+i printed prediction: [2, 11, 15, 16]
+ground truth: [16, 2, 15, 2, 11]
+response: Tree in the form of nested list: [15, [16, [], [2, [], []]], [2, [], [11, [], []]]]. 
+        Output its inorder traversal as a list of integers excluding empty branches and without printing `None` in the final output. Print your final answer as Inorder traversal:
+         [2, 11, 15, 16]
+        """
+        # Base case: if the tree is empty, return an empty list
+        if not tree:
+            return []
+        
+        # Recursive case: first, traverse the left subtree
+        left_subtree = self.inorder_traversal(tree[1])
+        
+        # Then, add the root node
+        root_value = tree[0]
+        
+        # Finally, traverse the right subtree
+        right_subtree = self.inorder_traversal(tree[2])
+        
+        # Combine the results and return
+        return left_subtree + [root_value] + right_subtree
+
+# Example usage
+tree = [15, [16, [], [2, [], []]], [2, [], [11, [], []]]]
+inorder_traversal = BinaryTree().inorder_traversal(tree)
+print("Inorder traversal:", inorder_traversal)
+```
+
+This code defines a class `BinaryTree` with a method `inorder_traversal` that recursively traverses the tree in the order of left subtree, root, and then right subtree. The method returns a list of integers representing the inorder traversal of the tree, excluding any empty branches.

@@ -1,0 +1,37 @@
+GCD of 21 and 14 is 7
+USE_FEWSHOT : False and stop_criteria : None and max_tokens_length allowed : 512 Accuracy for Qwen/Qwen2-Math-7B: 47/100 = 47.0%
+Avg time per sample: 12090.5 ms
+Extraction summary: {'total': 100, 'key_matches': 29, 'fallback': 71, 'none': 0}
+
+            In this task, you need to compute the greatest common divisor of two numbers.
+
+"
+            "Problem: Compute gcd(241, 447).
+"
+            "A: Let's think step by step:
+            
+USE_FEWSHOT False : and stop_criteria : None and max_tokens_length allowed : 1024 Accuracy for Qwen/Qwen2-Math-7B-Instruct: 97/100 = 97.0%
+Extraction summary: {'total': 1, 'sentence_match': 99, 'key_matches': 0, 'fallback': 1, 'none': 0}
+[{'role': 'user', 'content': "Compute gcd(423, 324). Let's think step by step:"}]
+USE_FEWSHOT : False and stop_criteria : None and max_tokens_length allowed : 512 Accuracy for Qwen/Qwen2-Math-7B: 36/100 = 36.0%
+Avg time per sample: 12678.2 ms
+Extraction summary: {'total': 100, 'key_matches': 26, 'fallback': 74, 'none': 0}
+
+            In this task, you need to compute the greatest common divisor of two numbers.
+
+"
+            "Problem: Compute gcd(343, 382).
+"
+            "A: Let's think step by step:
+            
+USE_FEWSHOT : False and stop_criteria : None and max_tokens_length allowed : 512 Accuracy for Qwen/Qwen2-Math-7B: 32/100 = 32.0%
+Avg time per sample: 13471.4 ms
+Extraction summary: {'total': 100, 'key_matches': 1, 'fallback': 99, 'none': 0}
+
+            In this task, you need to compute the greatest common divisor of two numbers.
+
+"
+            "Problem: Compute gcd(100, 347).
+"
+            "Just Answer it : ?:
+            

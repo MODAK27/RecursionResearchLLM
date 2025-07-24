@@ -1,0 +1,54 @@
+Mistral-7B-CoT :
+It has been fine-trained based on mistralai/Mistral-7B-Instruct-v0.2.
+
+The llama3-b8 model was fine-tuning on dataset CoT_ollection.
+
+The training step is 12,000. The batch of each device is 16 and toal GPU is 5.
+
+Accuracy: 8/100 = 8.0%
+Avg time per sample: 1521.9 ms
+
+Accuracy with 1 easy prompt in conext Learning : 17/100 = 17.0%
+Avg time per sample: 1019.4 ms
+
+Accuracy with better prompt in context learning : 34/100 = 34.0%
+Avg time per sample: 6537.6 ms
+
+GPT2
+
+
+GPT2: Accuracy: 1/100 = 1.0%
+GPT2 Accuracy with InContext Learning one exmample for every inference : 
+Accuracy: 8/100 = 8.0%
+
+Accuracy for gpt2 with better incontext Learnibg: 12/100 = 12.0%
+
+
+
+inContext Learning
+
+Normal  : PROMPT_TEMPLATE = (
+    "In this task, you need to compute the greatest common divisor of two numbers.\n\n"
+    "Problem: Compute gcd({a}, {b}).\n"
+    "A: Let's think step by step:"
+)
+
+Better based on dataset coll : FEW_SHOT_PROMPT = """Given a simple high-school level math question, you are required to solve it and provide the final answer. The final answer is always a single number.
+
+Problem: Compute gcd(98, 56).
+Let's think step by step:
+1. 98 > 56 ⇒ 98 % 56 = 42
+2. 56 > 42 ⇒ 56 % 42 = 14
+3. 42 > 14 ⇒ 42 % 14 = 0
+Answer: 14
+
+Problem: Compute gcd(22, 114).
+Let's think step by step:
+1. 114 > 22 ⇒ 114 % 22 = 4
+2. 22 > 4 ⇒ 22 % 4 = 2
+3. 4 > 2 ⇒ 4 % 2 = 0
+Answer: 2
+
+Now solve:
+Problem: Compute gcd({a}, {b}).
+Let's think step by step:"""
